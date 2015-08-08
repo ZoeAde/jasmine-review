@@ -1,24 +1,18 @@
 module.exports = {
 // Write a function that takes three random numbers from 0 to 100 and returns the largest one.
 
-findLargestThree : function() {
-  var arr = [];
-  for (var i = 0; i < 3; i++) {
-    var num = Math.floor(Math.random * 100);
-    arr.push(num);
-  }
+findLargestThree : function(arr) {
   return Math.max.apply(Math, arr);
 },
 
 // Write a function that takes a random number from 0 to 100 and returns all the odd numbers from 40 to that random number in an array. If the number is smaller than output the number.
-returnOddArray : function() {
-  var number = Math.floor(Math.random * 100);
-  var arr = [];
-  if (number < 40) {
-    return number;
+returnOddArray : function(num) {
+  if (num < 40) {
+    return num;
   }
-  else {
-    for (var i = 0; i < (number - 40); i++) {
+  else if (40 <= num <= 100) {
+    var arr = [];
+    for (var i = 40; i < num; i++) {
       if (i % 2 !== 0) {
       arr.push(i);
       }
@@ -40,16 +34,14 @@ returnEvenArray : function() {
 },
 
 // Write a function that takes a random number from 0 to 100 and returns the all the odd numbers from 40 to that random number in an array. If the number is smaller than 40, return all the numbers down to the randomized one in an array - i.e., if the number is 37, you should return [40, 39, 38, 37].
-returnOddArray2 : function() {
-  var number = Math.floor(Math.random * 100);
-  var arr = [];
-  if (number < 40) {
-    for (var i = 40; i < (40 - number); i--) {
+returnOddArray2 : function(num) {
+  if (num < 40) {
+    for (var i = 40; i < num; i--) {
       arr.push(i);
     }
   }
-  else {
-    for (var j = 0; j < (number - 40); j++) {
+  else if (40 <= num <= 100) {
+    for (var j = 40; j < num; j++) {
       if (j % 2 !== 0) {
       arr.push(j);
       }
@@ -106,9 +98,6 @@ findLeastCommon : function() {
     }
   }
 },
-
-
-
 
 // Write a function that takes two randomized numbers and returns their average and standard deviation.
 
