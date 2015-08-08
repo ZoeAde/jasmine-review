@@ -36,19 +36,18 @@ returnEvenArray : function(number) {
 returnOddArray2 : function(num) {
   var arr = [];
   if (num < 40) {
-    for (var i = 40; i < num; i--) {
+    for (var i = 40; i < (40 - num); i--) {
       arr.push(i);
     }
   }
-  else if (40 <= num <= 100) {
-    for (var j = 40; j < (num - 40); j++) {
-      if (j % 2 !== 0) {
+  if (num > 40) {
+    for (var j = 40; j < (num - 40); j+2) {
       arr.push(j);
-      }
     }
   }
   return arr;
 },
+
 
 // Write a function that takes a random number from 0 to 10,0000 and returns the sum of its digits. For instance, if the randomized number is 1049, the function should return 14.
 randomizeSum : function(number) {
