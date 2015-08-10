@@ -101,7 +101,17 @@ findLeastCommon : function(num1, num2) {
 
 //Problem 9
 // Write a function that takes two randomized numbers and returns their average and standard deviation.
-
+findDeviation : function(num1, num2) {
+  var arr = [];
+  var avg = parseInt(((num1 + num2) / 2).toFixed(0));
+  var square1 = Math.pow((num1 - avg), 2);
+  var square2 = Math.pow((num2 - avg), 2);
+  var avgSquare = (square1 + square2) / 2;
+  var standardDev = parseInt(Math.sqrt(avgSquare).toFixed(2));
+  arr.push(avg);
+  arr.push(standardDev);
+  return arr;
+}
 
 };
 

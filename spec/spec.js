@@ -62,9 +62,9 @@ describe('least common multiple', function() {
 });
 
 //Problem 9
-// describe('return highest num', function() {
-//   it('returns largest of three random numbers', function() {
-//     expect().toEqual();
-//   });
-// });
+describe('return highest num', function() {
+  it('returns largest of three random numbers', function() {
+    expect(code.findDeviation(16, 50)).toEqual([33, 17]);
+  });
+});
 
